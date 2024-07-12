@@ -1,12 +1,12 @@
 function greet(){
-    console.log("Hello!")
+    console.log("Hello!");
 }
 
 function add(a,b){
-    return a+b
+    return a+b;
 }
 
-greet()
+greet();
 
-let sum=add(5,6)
-console.log(sum)
+let sum=add(5,6);
+console.log(sum);
