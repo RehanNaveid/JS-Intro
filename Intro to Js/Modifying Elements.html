@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation Exercise</title>
+</head>
+<body>
+    <h1 id="main-heading">Hello, World!</h1>
+    <p class="highlight">This is a highlighted paragraph.</p>
+    <p class="highlight">This is another highlighted paragraph.</p>
+    <p>This is a regular paragraph.</p>
+    <img id="profile-pic" src="old-image.jpg" alt="Profile Picture">
+    <div id="menu-item">Menu Item</div>
+
+    <script>
+        // 1. Selecting Elements by ID
+        function changeHeading() {
+            const element=document.getElementById("main-heading");
+            element.textContent="Welcome to JavaScript"
+        }
+
+        // 2. Selecting Elements by Class
+        function highlightParagraphs(){
+            const highlights = document.getElementsByClassName("highlight");
+            for (let i = 0; i < highlights.length; i++) {
+                highlights[i].style.backgroundColor = 'yellow';
+            }
+               
+        }
+
+        // 3. Selecting Elements by Tag
+        function italicizeText(){
+            const paragraph=document.getElementsByTagName("p")
+            for (let i = 0; i < paragraph.length; i++) {
+                paragraph[i].style.fontStyle = 'italic';
+            }
+        }
+        // 4. Modifying Attributes
+        function updateimage(){
+            const image = document.getElementById("profile-pic");
+            image.setAttribute("src", "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAG4AbgMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAADBAECBQAGB//EADQQAAICAQMCBAQFAwQDAAAAAAECAxEABBIhMUETIlFhBXGBoRQysdHwkcHxI1Ji4SQzQv/EABgBAQEBAQEAAAAAAAAAAAAAAAEAAgME/8QAHBEBAQEBAQEAAwAAAAAAAAAAAAERAhIhAzFB/9oADAMBAAIRAxEAPwD5ZGrwwVu8Nj5aUihhX8ZkPmZ6JFg/Lm/51wDu6SEFrAFEA8VhfEZyhWSiSevrxgwPBLKJCouwtG+B7VeUhWFlYjSNudrYs1++U2i2V24AJVruzkwogDiUnivyn1/xgiHxmNh8QmkZfK8jFfTreVgCPFISteZKA+uN/E4fEKyLypJo3fF9D74TS6Nk0jsDZZ4+3Q2cZTrFlDl6J3e+NxowXTtuqkPHr5jxk+AnisZNwHJ4OMNGiJAV6hD3uvMctIXmUk7xtYWPast4e7VLz5aFt7euWDBV4Zh0HI4PTOjUimIqjW5hQOQpmX8M1kaUyKfzOG8w47Yt8SgVF/EaQloyQCGF16YwkJMe4SVzxRvCajSpISN9B+B7VgNYD2b6Vgs2TooiHVrDjkDMyRSvAXHWtapCMbA8MkeuSVCxBtjFiSBx1yEP5WdiVJ/MD+udppKYKW49LyZFihZCC4oEUObr550cjRgqyeJRsffBTeNbUTsdqtjfbr+uWMf4WizCXdQvpXX9sANBqGVCSgro1H+2MJM8QqML4ZIYbj0IsjEdNL/qEeUhgdwNjnDKHQFWNgj516c9sEDI8bTOtUb6HjILBAVCgmwbrkZYQai2LxAsTZo8jOnV106LtYnre019fQ4LQpW8oFEUN36Z3jAqu4kKRVE9vlkKd5UX5f8A6J4wsiKy+RPKvSs0bXB468NRJ4YPHP3yqSmKTa5N3xxd5Dl9wCgn1G4V88lWVJCSjcmx/O2QMUhiIUncDfA64hq4OnhlT6kHvjcGpYhr6duMFNUcnD0T7j++CDAI3FuV9DlYFRtQp/KRyB0wMa+JGtuBXY9/nhkVWZdpsAV9b/7+2aawVzbowktb2ivvf1xheFALL5e4FnFXZo2pfMDyLXvhpnidAG8QEnsK5+n1wCslIxZGVtpqlHX3OMRzs3K7WQnksp9MXkRHj3kuKP5T1GT+JLRiONbF1uPYe2VWa19PLp1VF1BiDuaB3ECv7Y/Hp0FPsZ1Fc7rHy6cZgafTwa2RPxKuT0BHHb9ccgfVfC5v/AkZouT4ZPIHoD/Y5yt53K3PwXrn1Ds+i0WokMhgprvygGufb9sx9V8PnW2ZQquQF/5f9+2aWt+JaX4kiChppyPMxscdrUd8zdVLO7kBhfS2vOk5s/rnlhXVRmI+HIyrvFE11H9PTA7RGuyLzq3O48EYfU+FHAdhO8AGmHUYOMMB4hIRT144A/XEiJyi7lI73fAGdqNLO5BRvEvnk7cNPJVGKQE1+WgTmnotVIIlLISpHAHOZui682fDKlpGUsOprr3zg0RT8zXZFKPbCnTRtAJNtCySy88X2wTQnxKSOht6HNtGo5JhEHkZ3UcAkWPlg5PEBsc88OABznSgshEjMqDsTf1+eW8WKVQzl0vyqSaHtkhGVZot0hoAclia/npg01DBtlDavANemOaaFZdbGkLIHKjzL5vW/wBPvi+oYR6yRD5tjFb3UDz1rM1QWCVlcKSRfQXmiHtSOp7fPMhJCshDAEHqPTHdPqSXKllUuRzf2Hofc8Zy749PRx+XxMRrYjNtCrbA3urF49JqBKG8UFqsDk/QVhjM7X4bFCE3ncT09uK785fSzxLLJ/6zvBsAbb6cjuBnTmWTHHvv3dxky+eVRa7AfNtJPXvzjmn00xaPwIjMTZZQtirFD+f4LIkr6aWV3jMxcMAvQ+vXr/PTOUSxlo3WEsVDA1RN1x7/AE+46aYET4UBGzTXR3Bh1KVVex6+x4+WXhieF5Ywg7eVjyvr1HTKmfxELRh7VreiKHHXqR8z1Fn0xkavSrMZZ/h5mQgqXicrTXdcfM9QPtgHnVlfwaUHaOnPXB+KTt52tQoDqcDtkUDYSR1u+Mp57Wj8s22YlIIBLg88i+cvIzSMVoArR2dhgFDbOFJa/MSMom7cb60bs5I4kzQMZYpwsgNWvb98K2qVAXkiDlje8nEamMXlUbD6VeDZpapi1UBRwxNIaqCUH/QA7LR7ZEmqMdFVBAHSv3vM1AwO7mvnWPRtL+FpkAjPBI7+19skiXWh0TaDadi3W+2Dh1PnIZ9qnsATXyxdlYnp/TtkIBZ5N1xisaiTxyBQjuvXxLNBuh46VmxpGg1QcTITplII2AtRI6rQ4odm/fPLSOxQX09cd+H6ufTQ7oJWR0JZa7n/AB+uGCxuTwfh0fwSZdOVtVfrGWvkrfqCPXp2NYH4fOIVkk07rGlhQ0koUnueCfviZ12qbTruhdkUFgxur57dPbAaiU6mOMah1joEhtos811HNcYLARG/g7lDUemUCUw3rvF9Bxl21CFFU3wKroBz2wYkYyWh64gVpNMvB0zcnvLVfbJmkQSOVhHmFC+ciQUh8QeUmhfBOWURqVWU7tp6NYvHTqIwz+SOEM3cbbv6YSRHkQqTCoHFbaxz4fJBDrRKDfFbUSwfv8sVmCtqHdWu2Joiqs9MPqgcenWEG2hY+4BsfXL75hGY4PDo8k7AemRGhZqrGoYAWPiHaApHc4ejYzJkk67wWf8A2gL8+mBRLO1mIA54F0c1ZUVFIcmQ7SoofkP19cnT6YW4G4bQTW2u46+/X+mOs6R8CwgaQN4l7QvY9r/bNn4TB4MjIiqm1tyySgEKOQb7LVXRB5+WIStENJIdh8QvW09D65dtR4imhIIrDKOguhZJ7nJU/qpEWN4oQszRAO8kf5F/3G65FnvXQ4q8LaqJodSXJjYUURNpFfT37nrlCJI4AsiIdxoUaYA/zp7418Pj1UbbdFpfGajbNRoXwMAwDtI5rJpdvCm+1ZWwo2kWfXLA7WPsMWh9sm1VdWBHYnplSzXfTnBdWsEhbrrhmA62bvtkliURKYWxF++VVHBs3XbvnMAUUHvlTaMoBsG8BDUIYtfIrHLIBIxfSKSRZsUcrLMx1IhiAvpbZystvx6eMnP0Sabwjuq79RgotWoYiNWJbsehy2o0wjEckzF991XrijMA/QX0BoZ1kz9uHdlvxDys0h3Eg3fPvjOn1CxuoaMyq/UCQqePli2pi2DdY6cZSJgaRRRbqcWWrHNpjGOF3WbYmgv/ABv3o5R5JJpJHqR23cqzWo9P7/1xCWERpYJpuovGtNGWiCrxfJ56nCh//9k=");
+        }
+        // Test the functions
+        changeHeading(); // Change heading text
+        highlightParagraphs();
+        italicizeText();
+        updateimage();
+    </script>
+</body>
+</html>
